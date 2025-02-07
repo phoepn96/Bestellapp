@@ -1,0 +1,65 @@
+#restaurantContentDiv {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 50px;
+	flex-wrap: wrap;
+}
+
+.restaurantCard {
+	width: 45%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: orangered;
+	border-radius: 10px;
+	background-color: rgb(158, 149, 149);
+	box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.45);
+}
+
+.restaurantCard:hover {
+	cursor: pointer;
+	scale: 1.1;
+}
+
+.restaurantCard:active {
+	cursor: pointer;
+	scale: 1;
+}
+
+.restaurantCard h3 {
+	font-size: 32px;
+	margin: 10px;
+}
+
+.restaurantCard img {
+	width: 80%;
+	height: 200px;
+	object-fit: cover;
+	border-radius: 15px;
+	box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.45);
+}
+
+.restaurantCardText {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 45%;
+}
+
+.ratingDiv {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	gap: 10px;
+}
+
+.ratingDiv img {
+	width: 32px;
+	height: 32px;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bestellapp</title>
+
+		<link rel="stylesheet" href="../styles/restaurantCard.css" />
+		<link rel="stylesheet" href="../styles/general.css" />
+		<link rel="stylesheet" href="../styles/filterSection.css" />
+		<link rel="stylesheet" href="../styles/header.css" />
+	</head>
+	<body onload="init()">
+		<div id="content">
+			<header>
+				<div class="logoImgDiv">
+					<a href="../html/index.html"
+						><img src="../assets/Material/Logo/Logo.png" alt="BestellappLogo"
+					/></a>
+				</div>
+				<div id="inputDiv">
+					<label for="input">Lieferadresse:</label>
+					<input id="input" type="text" />
+				</div>
+				<label class="switch">
+					<input type="checkbox" />
+					<span class="slider round"
+						><span id="white">Lieferung </span
+						><span id="orange"> Abholung</span></span
+					>
+				</label>
+				<button id="burgermenuBtn">
+					<img
+						id="burgerImg"
+						src="../assets/Material/Favicon/speisekarte.png"
+						alt="Auswahl"
+					/>
+				</button>
+			</header>
+			<div class="divider"></div>
+			<div id="burgermenuContent"></div>
+			<main id="main"></main>
+			<footer></footer>
+		</div>
+
+		<script src="../scripts/script.js"></script>
+		<script src="../scripts/temps.js"></script>
+	</body>
+</html>

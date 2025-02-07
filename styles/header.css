@@ -1,0 +1,146 @@
+header img {
+	width: 200px;
+}
+
+header img:hover {
+	cursor: pointer;
+	scale: 1.1;
+}
+
+header img:active {
+	scale: 1;
+}
+header {
+	padding: 30px 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: end;
+	box-shadow: (0, 0, 2px, white);
+	width: 100%;
+}
+
+.logoImgDiv {
+	background-color: orangered;
+	padding: 10px;
+	border-radius: 15px;
+}
+
+#burgermenuBtn {
+	background-color: orangered;
+	border-radius: 15px;
+	border: none;
+	width: fit-content;
+}
+#burgerImg {
+	width: 55px;
+	height: 60px;
+	filter: invert(1);
+}
+
+#burgerImg:hover {
+	scale: 1.1;
+	cursor: pointer;
+}
+
+#burgerImg:active {
+	scale: 1;
+}
+
+#inputDiv {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: white;
+}
+
+#input {
+	width: 200px;
+	height: 32px;
+	border-radius: 34px;
+	border: none;
+	background-image: url(../assets/assets/map_marker.svg);
+	background-repeat: no-repeat;
+	padding-left: 30px;
+}
+
+/*Slider */
+
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 250px;
+	height: 34px;
+}
+
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: white;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 30px;
+	left: 5px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+input:checked + .slider {
+	background-color: orangered;
+}
+
+input:focus + .slider {
+	box-shadow: 0 0 1px orangered;
+}
+
+input:checked + .slider:before {
+	-webkit-transform: translateX(100px);
+	-ms-transform: translateX(100px);
+	transform: translateX(210px);
+}
+
+.slider.round {
+	border-radius: 34px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
+	background-color: orangered;
+}
+input:checked + .slider.round:before {
+	border-radius: 50%;
+	background-color: white;
+}
+
+.switch span {
+	text-align: center;
+	padding-top: 5px;
+}
+
+#white {
+	color: white;
+	font-weight: 600;
+}
+#orange {
+	color: orangered;
+	font-weight: 600;
+}

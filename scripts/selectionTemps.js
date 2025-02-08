@@ -28,7 +28,7 @@ function restaurantCardTemp(key, restaurant) {
                   
                     <p>${Object.keys(
 											mealData[key]["Restaurants"][restaurant]["Speisen"][
-												"Hauptgericht"
+												"Hauptspeisen"
 											]
 										)}</p>
                       <div class="ratingDiv">
@@ -40,21 +40,4 @@ function restaurantCardTemp(key, restaurant) {
                 </div>
               
                 `;
-}
-
-function showMenuTemp(mealType) {
-	return ` <div class="mealTypeCard">
-                <h2>${mealType}</h2>
-                <div class="mealTypeMenu" id="${mealType}">
-                </div>
-            </div>
-                
-    `;
-}
-
-function mealSubtypeTemp(key, restaurant, mealType, mealSubtype) {
-	return `<div class="mealSubtypeDiv">
-                <h3>${mealSubtype}<h3>
-                <p>${mealData[key]["Restaurants"][restaurant]["Speisen"][mealType][mealSubtype]["Beschreibung"]}
-            </div>`;
 }

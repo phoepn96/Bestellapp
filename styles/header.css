@@ -26,24 +26,24 @@ header {
 	border-radius: 15px;
 }
 
-#burgermenuBtn {
+#shoppingCartBtn {
 	background-color: orangered;
 	border-radius: 15px;
 	border: none;
 	width: fit-content;
 }
-#burgerImg {
+#shoppingCartIcon {
 	width: 55px;
 	height: 60px;
 	filter: invert(1);
 }
 
-#burgerImg:hover {
+#shoppingCartIcon:hover {
 	scale: 1.1;
 	cursor: pointer;
 }
 
-#burgerImg:active {
+#shoppingCartIcon:active {
 	scale: 1;
 }
 

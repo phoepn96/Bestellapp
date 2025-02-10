@@ -315,7 +315,7 @@ const mealData = {
 					},
 				},
 			},
-			"Bill's Burger Shack": {
+			"Bills Burger Shack": {
 				Bild: "../assets/restaurant/americandiner.png",
 				Bewertung: 4.8,
 				Speisen: {

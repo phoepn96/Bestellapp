@@ -2,7 +2,14 @@ function openMenu(key, restaurant) {
 	mainRef.innerHTML = "";
 	mainRef.innerHTML = "<div id='menuContentDiv'></div>";
 	const menuContentDivRef = document.getElementById("menuContentDiv");
-	menuContentDivRef.innerHTML = "";
+	menuContentDivRef.innerHTML = `<div id='menuContentDiv'>
+                                    <div id='restaurantDiv'>
+                                    <h2>Bei <span>${restaurant}</span> bestellen:</h2>
+                                        <img src="${mealData[key]["Restaurants"][restaurant].Bild}">
+                                        
+                                     </div>
+                                     <div class="divider"></div>
+                                    </div>`;
 
 	Object.keys(mealData[key]["Restaurants"][restaurant]["Speisen"]).forEach(
 		(course) => {

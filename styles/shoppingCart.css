@@ -1,0 +1,72 @@
+.show {
+	width: 30vw;
+	height: 100%;
+	background-color: white;
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+	border: 2px solid white;
+	display: flex;
+	flex-direction: column;
+	position: sticky;
+	top: 0;
+	right: 0;
+	box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.45);
+}
+#cartHeadline h2 {
+	color: black;
+}
+.hide {
+	display: none;
+}
+
+#payBtn {
+}
+
+#shoppingCartContent {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+#shoppingCartContent h2 {
+	color: black;
+}
+
+.mealCombined {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.mealCombined span {
+	margin: 0;
+}
+
+.mealCombined p {
+	margin: 0;
+}
+
+#restaurantCartDiv {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+#cartItems {
+	width: 100%;
+}
+#cartHeadline h2 {
+	margin: 0;
+}
+
+.showInfo {
+	display: flex;
+}
+
+.hideInfo {
+	display: none;
+}

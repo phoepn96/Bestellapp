@@ -24,7 +24,7 @@ function mealTemp(key, restaurant, course, mealType, meal) {
                 </div>
                 <div class="mealCardBtnDiv">
                     <p>${mealData[key]["Restaurants"][restaurant]["Speisen"][course][mealType][meal]["Beschreibung"]}</p>
-                    <button class="addToCartBtn">ADD</button>
+                    <button class="addToCartBtn" onclick="intoCart('${key}', '${restaurant}', '${course}', '${mealType}', '${meal}')"><img src="../assets/Material/Favicon/plus.png"></button>
                 </div>
             </div>`;
 }

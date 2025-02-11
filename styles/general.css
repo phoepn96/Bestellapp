@@ -7,6 +7,7 @@ body {
 	background-color: rgb(50, 42, 42);
 	margin: 0;
 	font-family: "liter", sans-serif;
+	scroll-behavior: smooth;
 }
 
 .divider {
@@ -46,13 +47,75 @@ h2 {
 	align-items: center;
 	flex-direction: column;
 	width: 100%;
+	scroll-behavior: smooth;
 }
 #main {
 	width: 100%;
+	scroll-behavior: smooth;
 }
 
 #wrapper {
 	width: 100%;
 	display: flex;
 	gap: 20px;
+}
+
+#cartBtnDiv {
+	position: fixed;
+	right: 5px;
+	bottom: 5px;
+
+	border-radius: 15px;
+	opacity: 0.4;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 5px;
+}
+
+#cartBtnDiv:hover {
+	opacity: 1;
+}
+
+#onTop {
+	background-color: orangered;
+	border-radius: 50%;
+	border: none;
+}
+#onTopIcon {
+	width: 60px;
+	height: 60px;
+
+	filter: invert(1);
+	border-radius: 50%;
+}
+#onTopIcon:hover {
+	scale: 1.1;
+}
+#onTopIcon:active {
+	scale: 1;
+}
+#restBack {
+	border-radius: 50%;
+	border: none;
+	margin-top: 3px;
+	background-color: rgba(255, 69, 0, 0);
+}
+#backToRestau {
+	width: 60px;
+	height: 65px;
+	border-radius: 50%;
+}
+#backToRestau:hover {
+	scale: 1.1;
+}
+#backToRestau:active {
+	scale: 1;
+}
+
+#BtnDivDnone {
+	width: 100%;
+}
+.rund {
+	border-radius: 50% !important;
 }

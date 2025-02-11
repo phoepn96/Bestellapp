@@ -11,10 +11,12 @@
 		<link rel="stylesheet" href="../styles/header.css" />
 		<link rel="stylesheet" href="../styles/menu.css" />
 		<link rel="stylesheet" href="../styles/shoppingCart.css" />
+		<link rel="icon" href="../assets/Material/Favicon/favicon-32x32.png" />
+		<link rel="stylesheet" href="../styles/footer.css" />
 	</head>
 	<body onload="init(), loadData(), loadDataIntoCartDiv(), placeholder()">
 		<div id="content">
-			<header>
+			<header id="header">
 				<div class="logoImgDiv">
 					<a href="../html/index.html"
 						><img src="../assets/Material/Logo/Logo.png" alt="BestellappLogo"
@@ -48,6 +50,7 @@
 						<div id="cartHeadline"><h2>Warenkorb:</h2></div>
 						<div id="cartItems"></div>
 						<div id="deliveryCost"></div>
+						<div id="finalPriceDiv" class="hideInfo"></div>
 						<div id="info" class="hideInfo">Wähle zuerst dein Essen aus!</div>
 						<button
 							id="payBtn"
@@ -58,7 +61,38 @@
 					</div>
 				</div>
 			</div>
-			<footer></footer>
+			<div id="BtnDivDnone">
+				<div id="cartBtnDiv">
+					<button id="onTop" onclick="scrollOnTop()">
+						<img src="../assets/Material/Favicon/to top.png" id="onTopIcon" />
+					</button>
+					<button
+						id="restBack"
+						class="hide"
+						onclick="init(), backToSelection(), scrollOnTop()"
+					>
+						<img
+							id="backToRestau"
+							src="../assets/Material/Favicon/android-chrome-192x192.png"
+						/>
+					</button>
+
+					<button id="shoppingCartBtn" class="rund" onclick="openCart()">
+						<img
+							id="shoppingCartIcon"
+							class="rund"
+							src="../assets/Material/Favicon/shopping-cart.png"
+							alt="Auswahl"
+						/>
+					</button>
+				</div>
+			</div>
+			<div class="divider"></div>
+			<footer>
+				<a href="">Datenschutz</a>
+				<a href="">AGB</a>
+				<a href="">Impressum</a>
+			</footer>
 		</div>
 
 		<script src="../scripts/mealData.js"></script>
@@ -69,5 +103,6 @@
 		<script src="../scripts/shoppingCart.js"></script>
 		<script src="../scripts/assets.js"></script>
 		<script src="../scripts/shoppingCartTemp.js"></script>
+		<script src="../scripts/filterFunctions.js"></script>
 	</body>
 </html>

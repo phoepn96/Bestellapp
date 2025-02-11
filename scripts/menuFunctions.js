@@ -5,7 +5,7 @@ function openMenu(key, restaurant) {
 	menuContentDivRef.innerHTML = `<div id='menuContentDiv'>
                                     <div id='restaurantDiv'>
                                     <h2>Bei <span>${restaurant}</span> bestellen:</h2>
-                                        <img src="${mealData[key]["Restaurants"][restaurant].Bild}">
+                                        <img src="${mealData[key]["Restaurants"][restaurant]["Bild"]}">
                                         
                                      </div>
                                      <div class="divider"></div>

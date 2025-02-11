@@ -11,17 +11,17 @@ function mainSelectionTemp() {
 }
 
 function filterDivTemp(key) {
-	return `<div class=filterCard>
-                <img src="${mealData[key].Bild}" alt="filterImg">
+	return `<a href="#restaurantContentDiv"><div class=filterCard>
+                <img src="${mealData[key].Bild}" onclick="filterSelection('${key}')"alt="filterImg">
                 <h3>${key}</h3>
-            </div>   `;
+            </div> </a>  `;
 }
 
 function restaurantCardTemp(key, restaurant) {
-	return `<div class="restaurantCard" onclick="openMenu('${key}', '${restaurant}')">
+	return `<div class="restaurantCard" onclick="openMenu('${key}', '${restaurant}'), scrollOnTop(), backToSelection()">
        <h3>${restaurant}</h3>
                 <img src="${
-									mealData[key]["Restaurants"][restaurant].Bild
+									mealData[key]["Restaurants"][restaurant]["Bild"]
 								}" alt="${restaurant}">
                 <div class="restaurantCardText">    
                  

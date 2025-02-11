@@ -2,37 +2,36 @@
 	width: 30vw;
 	height: 100%;
 	background-color: white;
-	border-top-left-radius: 15px;
-	border-bottom-left-radius: 15px;
-	border: 2px solid white;
+	border-radius: 15px;
 	display: flex;
 	flex-direction: column;
 	position: sticky;
 	top: 0;
-	right: 0;
-	box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.45);
+	right: 15px;
+	color: white;
+	border: none;
 }
 #cartHeadline h2 {
-	color: black;
+	color: white;
 }
 .hide {
 	display: none;
-}
-
-#payBtn {
 }
 
 #shoppingCartContent {
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
-	position: relative;
-	width: 100%;
+	position: sticky;
 	height: 100%;
+	background-color: orangered;
+	border: none;
+	border: 2px solid white;
+	width: 100%;
 }
 
 #shoppingCartContent h2 {
-	color: black;
+	text-align: center;
 }
 
 .mealCombined {
@@ -47,6 +46,9 @@
 
 .mealCombined p {
 	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 #restaurantCartDiv {
@@ -69,4 +71,96 @@
 
 .hideInfo {
 	display: none;
+}
+
+.divideSmall {
+	width: 100%;
+	border-bottom: 1px solid grey;
+	margin-top: 2px;
+}
+
+#deliveryCost {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+}
+
+.cost {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: row;
+	width: 100%;
+}
+
+.showPrice {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+#finalPriceDiv {
+	width: 100%;
+}
+
+#payBtn {
+	padding: 20px 60px;
+	background-color: rgb(114, 114, 205);
+	border-radius: 8px;
+	color: white;
+	border: none;
+	margin-bottom: 5px;
+}
+
+.continueBtn {
+	padding: 20px 60px;
+	background-color: rgb(114, 114, 205);
+	border-radius: 8px;
+	color: white;
+	border: none;
+	margin-bottom: 5px;
+}
+
+#plus {
+	background-color: rgba(255, 69, 0, 0);
+	border: none;
+	color: white;
+}
+
+#plus:hover {
+	scale: 1.5;
+}
+
+#plus:active {
+	scale: 1;
+}
+
+#minus {
+	background-color: rgba(255, 69, 0, 0);
+	border: none;
+	color: white;
+}
+
+#minus:hover {
+	scale: 1.5;
+}
+
+#minus:active {
+	scale: 1;
+}
+
+#shoppingCartWrapper {
+	width: 30vw;
+	background-color: rgba(255, 69, 0, 0);
+}
+
+.placeholder {
+	text-align: center;
+}
+
+.restaurantCartDiv h3 {
+	text-align: center;
 }

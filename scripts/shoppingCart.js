@@ -19,33 +19,39 @@ function intoCart(key, restaurant, course, mealType, meal) {
 }
 
 function getDataIntoCartObj(key, restaurant, course, mealType, meal) {
-	if (!cart["items"].hasOwnProperty(restaurant)) {
-		cart["items"][restaurant] = {};
+	const cartItemDivRef = document.getElementById("cartItems");
+	if (cartItemDivRef) {
+		if (!cart["items"].hasOwnProperty(restaurant)) {
+			cart["items"][restaurant] = {};
+		}
+		if (!cart["items"][restaurant].hasOwnProperty(meal)) {
+			cart["items"][restaurant][meal] = {
+				amount: 1,
+				price:
+					mealData[key]["Restaurants"][restaurant]["Speisen"][course][mealType][
+						meal
+					]["Preis"],
+			};
+		} else {
+			cart["items"][restaurant][meal]["amount"]++;
+		}
+		saveData();
 	}
-	if (!cart["items"][restaurant].hasOwnProperty(meal)) {
-		cart["items"][restaurant][meal] = {
-			amount: 1,
-			price:
-				mealData[key]["Restaurants"][restaurant]["Speisen"][course][mealType][
-					meal
-				]["Preis"],
-		};
-	} else {
-		cart["items"][restaurant][meal]["amount"]++;
-	}
-	saveData();
 }
 
 function loadDataIntoCartDiv() {
 	const cartItemDivRef = document.getElementById("cartItems");
-	cartItemDivRef.innerHTML = "";
-	Object.keys(cart["items"]).forEach((restaurant) => {
-		cartItemDivRef.innerHTML += cartTemp(restaurant);
-		Object.keys(cart["items"][restaurant]).forEach((meal) => {
-			const cartMealRef = document.getElementById(`${restaurant}MealDiv`);
-			cartMealRef.innerHTML += cartMealTemp(restaurant, meal);
+	if (cartItemDivRef) {
+		cartItemDivRef.innerHTML = "";
+		Object.keys(cart["items"]).forEach((restaurant) => {
+			cartItemDivRef.innerHTML += cartTemp(restaurant);
+			Object.keys(cart["items"][restaurant]).forEach((meal) => {
+				const cartMealRef = document.getElementById(`${restaurant}MealDiv`);
+				cartMealRef.innerHTML += cartMealTemp(restaurant, meal);
+			});
 		});
-	});
+		getFinalPrice();
+	}
 }
 
 function redirect() {
@@ -81,25 +87,27 @@ function decreaseAmount(restaurant, meal) {
 	saveData();
 	loadDataIntoCartDiv();
 	placeholder();
+	getFinalPrice();
 }
 
 function upAmount(restaurant, meal) {
 	cart["items"][restaurant][meal]["amount"]++;
 	saveData();
 	loadDataIntoCartDiv();
+	getFinalPrice();
 }
 
 function placeholder() {
 	const cartItemDivRef = document.getElementById("cartItems");
 	if (cartItemDivRef) {
 		if (cartItemDivRef.innerHTML === "") {
-			cartItemDivRef.innerHTML = "<h2>Füge etwas zum Warenkorb hinzu</h2>";
+			cartItemDivRef.innerHTML =
+				"<p class='placeholder'>Füge etwas zum Warenkorb hinzu!</p>";
 		}
 	}
 }
 
 function lieferkosten() {
-	getFinalPrice();
 	const cartItemDivRef = document.getElementById("cartItems");
 	if (cartItemDivRef) {
 		const SliderRef = document.getElementById("checkbox");
@@ -112,15 +120,28 @@ function lieferkosten() {
 			}
 		}
 	}
+	getFinalPrice();
 }
 
 function getFinalPrice() {
 	let sum = 0;
 	document.querySelectorAll(".price").forEach((price) => {
 		sum += parseFloat(price.innerHTML);
-		console.log(sum);
 	});
-	console.log(sum);
+
+	showFinalPrice(sum);
 }
 
-getFinalPrice();
+function showFinalPrice(sum) {
+	const priceDiv = document.getElementById("finalPriceDiv");
+	if (priceDiv) {
+		if (document.querySelectorAll(".itemPrice").length != 0) {
+			priceDiv.innerHTML = `<div class="showPrice"><h3>Zu zahlender Betrag:</h3> <span>${sum}€</span></div>`;
+			priceDiv.classList.add("showInfo");
+			priceDiv.classList.remove("hideInfo");
+		} else {
+			priceDiv.classList.add("hideInfo");
+			priceDiv.classList.remove("showInfo");
+		}
+	}
+}

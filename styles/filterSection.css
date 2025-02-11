@@ -5,6 +5,7 @@
 	align-items: center;
 	gap: 50px;
 	color: orangered;
+	flex-wrap: wrap;
 }
 
 .filterCard {
@@ -16,6 +17,16 @@
 	background-color: rgb(158, 149, 149);
 	padding: 10px;
 	box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.45);
+	text-decoration: none;
+	color: orangered;
+}
+
+.filterCard h3 {
+	text-decoration: none;
+}
+
+.filterCard a {
+	text-decoration: none;
 }
 
 .filterCard:hover {

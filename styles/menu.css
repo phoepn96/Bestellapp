@@ -15,10 +15,10 @@
 }
 
 .courseDiv h2 {
-	background-color: white;
+	background-color: orangered;
 	padding: 20px 20px;
 	border-radius: 5px;
-	color: orangered;
+	color: white;
 }
 
 .mealDiv {

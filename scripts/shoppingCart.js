@@ -88,6 +88,7 @@ function decreaseAmount(restaurant, meal) {
 	loadDataIntoCartDiv();
 	placeholder();
 	getFinalPrice();
+	showItemCount();
 }
 
 function upAmount(restaurant, meal) {
@@ -95,6 +96,7 @@ function upAmount(restaurant, meal) {
 	saveData();
 	loadDataIntoCartDiv();
 	getFinalPrice();
+	showItemCount();
 }
 
 function placeholder() {
@@ -143,5 +145,20 @@ function showFinalPrice(sum) {
 			priceDiv.classList.add("hideInfo");
 			priceDiv.classList.remove("showInfo");
 		}
+	}
+}
+
+function showItemCount() {
+	let itemcount = 0;
+	const itemCountP = document.getElementById("itemCount");
+	if (Object.keys(cart["items"]).length > 0) {
+		Object.keys(cart["items"]).forEach((restaurant) => {
+			Object.keys(cart["items"][restaurant]).forEach((meal) => {
+				itemcount += cart["items"][restaurant][meal]["amount"];
+				itemCountP.innerHTML = itemcount;
+			});
+		});
+	} else {
+		itemCountP.innerHTML = 0;
 	}
 }

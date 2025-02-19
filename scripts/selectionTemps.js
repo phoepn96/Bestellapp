@@ -26,11 +26,11 @@ function restaurantCardTemp(key, restaurant) {
                 <div class="restaurantCardText">    
                  
                   
-                    <p>${Object.keys(
+                    <div id="cardPDiv"><p>${Object.keys(
 											mealData[key]["Restaurants"][restaurant]["Speisen"][
 												"Hauptspeisen"
 											]
-										)}</p>
+										)}</p></div>
                       <div class="ratingDiv">
                          <img src="../assets/Material/Favicon/star.png" alt="star">
                          <p>${

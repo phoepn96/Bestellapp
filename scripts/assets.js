@@ -26,7 +26,7 @@ const headerObserver = new IntersectionObserver(
 		entries.forEach((entry) => {
 			if (entry.isIntersecting) {
 				btnDiv.classList.add("hide");
-			} else {
+			} else if (!entry.isIntersecting) {
 				btnDiv.classList.remove("hide");
 			}
 		});
@@ -53,5 +53,17 @@ function checkCartVisibility() {
 		if (cartWrapper.classList.contains("hide")) {
 			openCart();
 		}
+	}
+}
+
+function resize() {
+	if (window.innerWidth < 820) {
+		document.getElementById("shoppingCartBtn").classList.add("hide");
+		document.getElementById("shoppingCartBig").classList.remove("hide");
+		document.getElementById("shoppingCartBig").classList.add("showBig");
+	} else {
+		document.getElementById("shoppingCartBtn").classList.remove("hide");
+		document.getElementById("shoppingCartBig").classList.add("hide");
+		document.getElementById("shoppingCartBig").classList.remove("showBig");
 	}
 }

@@ -66,7 +66,7 @@ h2 {
 	bottom: 5px;
 
 	border-radius: 15px;
-	opacity: 0.4;
+	opacity: 0.2;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -75,6 +75,10 @@ h2 {
 
 #cartBtnDiv:hover {
 	opacity: 1;
+}
+
+a {
+	text-decoration: none;
 }
 
 #onTop {
@@ -118,4 +122,36 @@ h2 {
 }
 .rund {
 	border-radius: 50% !important;
+}
+
+@media (max-width: 1050px) {
+	#wrapper {
+		flex-direction: column;
+		width: 100%;
+	}
+	#shoppingCartWrapper {
+		flex-grow: 1;
+		width: 100%;
+		display: fixed;
+		bottom: 0;
+		left: 0;
+		margin-bottom: 30px;
+	}
+	#shoppingCartContent {
+		width: 100%;
+		overflow: hidden;
+	}
+	#cartBtnDiv {
+		position: fixed;
+		right: 5px;
+		top: 5px;
+		bottom: 820px;
+
+		border-radius: 15px;
+		opacity: 0.2;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 5px;
+	}
 }

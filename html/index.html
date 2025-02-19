@@ -14,7 +14,9 @@
 		<link rel="icon" href="../assets/Material/Favicon/favicon-32x32.png" />
 		<link rel="stylesheet" href="../styles/footer.css" />
 	</head>
-	<body onload="init(), loadData(), loadDataIntoCartDiv(), placeholder()">
+	<body
+		onload="init(), loadData(), loadDataIntoCartDiv(), placeholder(), showItemCount()"
+	>
 		<div id="content">
 			<header id="header">
 				<div class="logoImgDiv">
@@ -27,13 +29,17 @@
 					<input id="input" type="text" />
 				</div>
 				<label class="switch">
-					<input id="checkbox" type="checkbox" onclick="lieferkosten()" />
+					<input
+						id="checkbox"
+						type="checkbox"
+						onclick="lieferkosten(), showItemCount()"
+					/>
 					<span class="slider round"
 						><span id="white">Lieferung </span
 						><span id="orange"> Abholung</span></span
 					>
 				</label>
-				<button id="shoppingCartBtn" onclick="openCart()">
+				<button id="shoppingCartBtn" class="hide" onclick="openCart()">
 					<img
 						id="shoppingCartIcon"
 						src="../assets/Material/Favicon/shopping-cart.png"
@@ -45,7 +51,7 @@
 			<div class="divider"></div>
 			<div id="wrapper">
 				<main id="main"></main>
-				<div id="shoppingCartWrapper" class="hide">
+				<div id="shoppingCartWrapper" class="hide fullScreen">
 					<div id="shoppingCartContent" class="hide">
 						<div id="cartHeadline"><h2>Warenkorb:</h2></div>
 						<div id="cartItems"></div>
@@ -78,6 +84,7 @@
 					</button>
 
 					<button id="shoppingCartBtn" class="rund" onclick="openCart()">
+						<p id="itemCount"></p>
 						<img
 							id="shoppingCartIcon"
 							class="rund"
@@ -87,6 +94,7 @@
 					</button>
 				</div>
 			</div>
+
 			<div class="divider"></div>
 			<footer>
 				<a href="">Datenschutz</a>

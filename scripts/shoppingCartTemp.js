@@ -27,7 +27,7 @@ function shoppingCartTemp() {
 						<div id="deliveryCost"></div>
 						<div id="finalPriceDiv" class="hideInfo"></div>
 						<div id="info" class="hideInfo">Wähle zuerst dein Essen aus!</div>
-						<button id="payBtn" onclick="clearStorage(), redirect(), loadData()">
+						<button id="payBtn" onclick="clearStorage(), redirect(), loadData(), showItemCount()">
 							Jetzt bestellen!
 						</button>`;
 }

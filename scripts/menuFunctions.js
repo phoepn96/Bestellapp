@@ -8,6 +8,13 @@ function openMenu(key, restaurant) {
                                         <img src="${mealData[key]["Restaurants"][restaurant]["Bild"]}">
                                         
                                      </div>
+									 <div class="divider"></div>
+									 <div id="menuNavDiv">
+									 	<a href="#VorspeisenDiv">Vorspeise</a>
+									 	<a href="#HauptspeisenDiv">Hauptspeise</a>
+									 	<a href="#NachspeisenDiv">Nachspeise</a>
+									 	<a href="#GetränkeDiv">Getränke</a>
+									 </div>
                                      <div class="divider"></div>
                                     </div>`;
 

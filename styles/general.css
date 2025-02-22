@@ -123,7 +123,32 @@ a {
 .rund {
 	border-radius: 50% !important;
 }
+#menuNavDiv {
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	margin-bottom: 30px;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 20px;
+}
 
+#menuNavDiv a {
+	background-color: white;
+	color: orangered;
+	padding: 20px;
+	border-radius: 15px;
+	width: 80px;
+	height: 20px;
+
+	text-align: center;
+}
+#shoppingCartBig {
+	display: none;
+}
+#shoppingCartBigDiv {
+	display: none;
+}
 @media (max-width: 1050px) {
 	#wrapper {
 		flex-direction: column;
@@ -134,7 +159,6 @@ a {
 		width: 100%;
 		display: fixed;
 		bottom: 0;
-		left: 0;
 		margin-bottom: 30px;
 	}
 	#shoppingCartContent {
@@ -153,5 +177,24 @@ a {
 		justify-content: center;
 		align-items: center;
 		padding: 5px;
+	}
+	#shoppingCartBigDiv {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+	}
+	#shoppingCartBig {
+		position: fixed;
+		bottom: 0;
+		width: 95%;
+		color: aliceblue;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: orangered;
+		border-radius: 15px;
+		gap: 40px;
+		height: 150px;
 	}
 }

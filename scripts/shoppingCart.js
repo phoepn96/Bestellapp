@@ -151,14 +151,17 @@ function showFinalPrice(sum) {
 function showItemCount() {
 	let itemcount = 0;
 	const itemCountP = document.getElementById("itemCount");
+	const itemCountDivRef = document.getElementById("itemCountDiv");
 	if (Object.keys(cart["items"]).length > 0) {
 		Object.keys(cart["items"]).forEach((restaurant) => {
 			Object.keys(cart["items"][restaurant]).forEach((meal) => {
 				itemcount += cart["items"][restaurant][meal]["amount"];
 				itemCountP.innerHTML = itemcount;
+				itemCountDivRef.innerHTML = itemcount;
 			});
 		});
 	} else {
 		itemCountP.innerHTML = 0;
+		itemCountDivRef.innerHTML = 0;
 	}
 }

@@ -58,7 +58,7 @@ function redirect() {
 	if (Object.keys(cart["items"]).length != 0) {
 		shoppingCartContentRef.innerHTML = `
 		<h2>Deine Bestellung wurde aufgegeben!</h2>
-        <button class='continueBtn' onclick='initCart(), placeholder(), lieferkosten()'>Mehr bestellen!!!</button>
+        <button class='continueBtn' onclick='initCart(), placeholder(), lieferkosten(), showItemCount()'>Mehr bestellen!!!</button>
         `;
 	} else {
 		document.getElementById("info").classList.add("showInfo");
@@ -151,17 +151,27 @@ function showFinalPrice(sum) {
 function showItemCount() {
 	let itemcount = 0;
 	const itemCountP = document.getElementById("itemCount");
-	const itemCountDivRef = document.getElementById("itemCountDiv");
+	if(itemCountP){
 	if (Object.keys(cart["items"]).length > 0) {
 		Object.keys(cart["items"]).forEach((restaurant) => {
 			Object.keys(cart["items"][restaurant]).forEach((meal) => {
 				itemcount += cart["items"][restaurant][meal]["amount"];
 				itemCountP.innerHTML = itemcount;
-				itemCountDivRef.innerHTML = itemcount;
 			});
 		});
 	} else {
 		itemCountP.innerHTML = 0;
-		itemCountDivRef.innerHTML = 0;
 	}
+}
+}
+
+function deleteMeal(restaurant, meal){
+	delete cart["items"][restaurant][meal];
+	console.log("test");
+	
+	saveData();
+	loadDataIntoCartDiv();
+	placeholder();
+	getFinalPrice();
+	showItemCount();
 }

@@ -13,16 +13,18 @@ function cartMealTemp(restaurant, meal) {
 		cart["items"][restaurant][meal]["amount"]
 	}<button id="plus" onclick="upAmount('${restaurant}', '${meal}')">+</button></p>
                 <p>${meal}</p>
+				
                 <span class="price itemPrice">${
 									cart["items"][restaurant][meal]["amount"] *
 									cart["items"][restaurant][meal]["price"]
-								}€</span>
+								}€<button id="binBtn" onclick="deleteMeal('${restaurant}', '${meal}')"><img src="../assets/Material/Favicon/bin.png"></button></span>
+								
     `;
 }
 
 function shoppingCartTemp() {
 	return `
-    <div id="cartHeadline"><h2>Warenkorb:</h2></div>
+    <div id="cartHeadline"><h2>Warenkorb(<span id="itemCount"></span>):</h2></div>
 						<div id="cartItems"></div>
 						<div id="deliveryCost"></div>
 						<div id="finalPriceDiv" class="hideInfo"></div>

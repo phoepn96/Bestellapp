@@ -52,6 +52,7 @@ h2 {
 #main {
 	width: 100%;
 	scroll-behavior: smooth;
+	position: relative;
 }
 
 #wrapper {
@@ -149,6 +150,16 @@ a {
 #shoppingCartBigDiv {
 	display: none;
 }
+footer a {
+	color: orangered;
+	text-decoration: none;
+}
+footer a:hover{
+	scale: 1.2;
+}
+footer a:active{
+	scale: 1;
+}
 @media (max-width: 1050px) {
 	#wrapper {
 		flex-direction: column;
@@ -169,7 +180,7 @@ a {
 		position: fixed;
 		right: 5px;
 		top: 5px;
-		bottom: 820px;
+		bottom: auto;
 
 		border-radius: 15px;
 		opacity: 0.2;
@@ -183,6 +194,7 @@ a {
 		justify-content: center;
 		align-items: center;
 		width: 100%;
+		
 	}
 	#shoppingCartBig {
 		position: fixed;
@@ -196,5 +208,9 @@ a {
 		border-radius: 15px;
 		gap: 40px;
 		height: 150px;
+		border: 2px solid white;
+	}
+	.hide{
+		display: none;
 	}
 }
